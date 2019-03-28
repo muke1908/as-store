@@ -1,5 +1,5 @@
 {
-  "name": "AsyncLS",
+  "name": "asynls",
   "version": "1.0.0",
   "description": "Asynchronous localStorage for web app. ",
   "main": "index.js",
