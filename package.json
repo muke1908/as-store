@@ -1,0 +1,22 @@
+{
+  "name": "AsyncLS",
+  "version": "1.0.0",
+  "description": "Asynchronous localStorage for web app. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "browserify index-module.js -t babelify -o index.js -s AsyncLS"
+  },
+  "keywords": [
+    "localStorage",
+    "asyncStorage",
+    "asynchronous"
+  ],
+  "author": "Mukesh",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babelify": "^10.0.0"
+  }
+}
