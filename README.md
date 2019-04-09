@@ -14,5 +14,5 @@ A local storage wrapper, that helps to write data to disk asynchronously. It use
 5) `AsyncLS.onWriteComplete(function)` - attach handler to disk "WRITE". `funciton` will be called when writing to disk.  
 
 ### Why it's fast and non-blocking ?
-`setItem` - doesn't write the data to disk immediately. Non-blocking. Process multiple write operation at once (with 500ms delay).  
+`setItem` - doesn't write the data to disk immediately. Non-blocking. Process multiple write operation at once (with 500ms throttling).  
 `getItem` - doesn't read data from disk. It maintain a hash map in client. It directly returns data from memory.  
