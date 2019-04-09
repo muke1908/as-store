@@ -2,7 +2,7 @@
 A local storage wrapper, that helps to write data to disk asynchronously. It uses in-mem cache for faster "READ" 
 
 ## Install  
-`npm install AsyncLS`
+`npm install asyncls`
 
 ## Usage  
 

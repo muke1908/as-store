@@ -1,11 +1,11 @@
 {
-  "name": "asynls",
+  "name": "as-store",
   "version": "1.0.0",
   "description": "Asynchronous localStorage for web app. ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "browserify index-module.js -t babelify -o index.js -s AsyncLS"
+    "prepublish": "browserify index-module.js -t babelify -o index.js -s asstore"
   },
   "keywords": [
     "localStorage",
