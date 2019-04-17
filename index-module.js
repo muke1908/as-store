@@ -1,9 +1,8 @@
 let writeListener = null;
+let __AS = (localStorage.getItem('__AS') && JSON.parse(localStorage.getItem('__AS'))) || {}
 
 const asyncStorage = {
-	cache:{
-
-	},
+	cache:__AS,
 	onWriteComplete: function(callback) {
 		console.log('Listening to write')
 		writeListener = callback
@@ -16,14 +15,14 @@ const asyncStorage = {
 		}
 
 		if(localStorage.getItem('__AS')){
-			var __AS = JSON.parse(localStorage.getItem('__AS'));
+			__AS = JSON.parse(localStorage.getItem('__AS'));
 			__AS[key] = value;
 		}else{
 			var __AS = {};
 			__AS[key] = value;
 		}
 		asyncStorage.cache = __AS
-		writeToDisk(__AS)
+		writeToDisk()
 	},
 	getItem: function(key) {
 
@@ -69,8 +68,8 @@ const asyncStorage = {
 
 
 let writingToDisk = false
-function writeToDisk(obj) {
-	const __OBJ = obj;
+function writeToDisk() {
+
 
 	if(writingToDisk) {
 		// console.log('debouncing..')
@@ -78,11 +77,11 @@ function writeToDisk(obj) {
 		writingToDisk = true;
 		setTimeout(()=>{
 			// console.log('writing to disk');
-			localStorage.setItem('__AS', JSON.stringify(__OBJ));
+			localStorage.setItem('__AS', JSON.stringify(__AS));
 			writingToDisk = false;
 
 			if(writeListener) {
-				writeListener(__OBJ)
+				writeListener(__AS)
 			}
 		},500)
 	}
