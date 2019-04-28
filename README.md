@@ -1,4 +1,4 @@
-# Asynchronous local storage
+# Asynchronous local storage  (Write through cache)
 A local storage wrapper, that helps to write data to disk asynchronously. It uses in-mem cache for faster "READ" 
 
 ## Install  
