@@ -7,11 +7,11 @@ A local storage wrapper, that helps to write data to disk asynchronously. It use
 ## Usage  
 
 ### Methods: 
-1) `AsyncLS.setItem(key, value)` - set `value` for `key` in `as-store`  
-2) `AsyncLS.getItem(key)` - lookup data for `key` from `as-store`  
-3) `AsyncLS.removeItem(key)` - remove `key` from `as-store`  
-4) `AsyncLS.flush()` - flush all the data from `as-store`  
-5) `AsyncLS.onWriteComplete(function)` - attach handler to disk "WRITE". `funciton` will be called when writing to disk.  
+1) `AsStore.setItem(key, value)` - set `value` for `key` in `as-store`  
+2) `AsStore.getItem(key)` - lookup data for `key` from `as-store`  
+3) `AsStore.removeItem(key)` - remove `key` from `as-store`  
+4) `AsStore.flush()` - flush all the data from `as-store`  
+5) `AsStore.onWriteComplete(function)` - attach handler to disk "WRITE". `funciton` will be called when writing to disk.  
 
 ### Why it's fast and non-blocking ?
 `setItem` - doesn't write the data to disk immediately. Non-blocking. Process multiple write operation at once (with 500ms throttling).  
