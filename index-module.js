@@ -14,13 +14,7 @@ const asyncStorage = {
 			}
 		}
 
-		if(localStorage.getItem('__AS')){
-			__AS = JSON.parse(localStorage.getItem('__AS'));
-			__AS[key] = value;
-		}else{
-			var __AS = {};
-			__AS[key] = value;
-		}
+		__AS[key] = value;
 		asyncStorage.cache = __AS
 		writeToDisk()
 	},
